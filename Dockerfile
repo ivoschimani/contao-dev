@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.15
 
 MAINTAINER Ivo Schimani <ivo@schimani.de>
 
@@ -10,7 +10,7 @@ RUN apk update \
 
 # Create user
 RUN mkdir -p /var/www && \
-    adduser -D -h /var/www -u $LOCAL_USER_ID -g $LOCAL_GROUP_ID -s /bin/sh www-data && \
+    adduser -D --home /var/www -u $LOCAL_USER_ID -g $LOCAL_GROUP_ID -s /bin/sh www-data -G www-data && \
     chown -R www-data:www-data /var/www
 
 RUN mkdir -p /run/nginx
