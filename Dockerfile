@@ -28,7 +28,7 @@ RUN apk add --no-cache --update \
     chown -R www-data:www-data /var/tmp/nginx && \
     chown -R www-data:www-data /var/tmp/php
 
-RUN apk --no-cache --update add tzdata php8-fpm php8-pdo_mysql php8-json php8-iconv php8-openssl php8-curl php8-ctype php8-zlib php8-xml php8-phar php8-intl php8-session php8-simplexml php8-soap php8-fileinfo php8-dom php8-tokenizer php8-pdo php8-xmlreader php8-xmlwriter php8-mbstring php8-gd php8-zip php8-bcmath php8-gmp php8-ftp php8-pecl-ssh2 libwebp-dev libzip-dev libjpeg-turbo-dev supervisor curl git openssh-client mysql-client imagemagick-dev libtool imagemagick ghostscript
+RUN apk --no-cache --update add tzdata php8-fpm php8-pdo_mysql php8-json php8-iconv php8-openssl php8-curl php8-ctype php8-zlib php8-xml php8-phar php8-intl php8-session php8-simplexml php8-soap php8-fileinfo php8-dom php8-tokenizer php8-pdo php8-xmlreader php8-xmlwriter php8-mbstring php8-gd php8-pecl-imagick php8-zip php8-bcmath php8-gmp php8-ftp php8-pecl-ssh2 libwebp-dev libzip-dev libjpeg-turbo-dev supervisor curl git openssh-client mysql-client imagemagick-dev libtool imagemagick ghostscript
 
 RUN rm -rf /etc/localtime \
     && ln -s /usr/share/zoneinfo/"Europe/Berlin" /etc/localtime \
